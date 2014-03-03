@@ -1,7 +1,10 @@
 .git/
 .metadata/
 .settings/
-.project
-.classpath
 Servers/
 bin/
+RemoteSystemsTempFiles/
+.project
+.classpath
+.checkstyle
+.pmd
