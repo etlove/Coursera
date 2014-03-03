@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 /**
  * @author etlove
  */
@@ -16,7 +18,7 @@ public class Board {
 	 * @param blocks input of block
 	 */
 	public Board(int[][] blocks) {
-		this.blocks = blocks.clone();
+		this.blocks = clone(blocks);
 		dim = blocks.length;
 	}
 	/**
@@ -170,11 +172,23 @@ public class Board {
 	 * @return exchanged result as Board object
 	 */
 	private Board exchange(int row, int col, int dRow, int dCol) {
-		int[][] copy = blocks.clone();
+		int[][] copy = clone(blocks);
 		int temp = copy[row][col];
 		copy[row][col] = copy[row + dRow][col + dCol];
 		copy[row + dRow][col + dCol] = temp;
 		return new Board(copy);
+	}
+	/**
+	 * 
+	 * @param input
+	 * @return
+	 */
+	private int[][] clone(int[][] input) {
+		int[][] copy = new int[input.length][input[0].length];
+		for (int row = 0; row < input.length; row++) {
+			copy[row] = Arrays.copyOf(input[row], input[row].length);
+		}
+		return copy;
 	}
 	/**
 	 * String representation of the board.

@@ -90,7 +90,7 @@ public class Solver {
 	}
 	/**
 	 * 
-	 * @author prokiller
+	 * @author etlove
 	 */
 	private class BoardNode implements Comparable<BoardNode> {
 		/**
