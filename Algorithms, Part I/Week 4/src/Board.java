@@ -87,7 +87,7 @@ public class Board {
 	 */
 	public Board twin() {
 		if (dim <= 1) return new Board(blocks);
-		// look for empty block
+		// look for two consecutive non-empty blocks
 		int row = 0;
 		int col = 0;
 		match:
@@ -101,7 +101,7 @@ public class Board {
 				}
 			}
 		}
-		// exchange value on row with non-empty block
+		// exchange value with non-empty block in the same row
 		return exchange(row, col, 0, -1);
 	}
 	/**

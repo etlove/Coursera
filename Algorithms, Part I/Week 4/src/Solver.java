@@ -82,7 +82,7 @@ public class Solver {
 	private BoardNode move(MinPQ<BoardNode> queue) {
 		BoardNode node = queue.delMin();
 		for (Board neighbor : node.board.neighbors()) {
-			if (node.parent == null || neighbor.equals(node.parent.board)) {
+			if (node.parent == null || !neighbor.equals(node.parent.board)) {
 				queue.insert(new BoardNode(neighbor, node));
 			}
 		}
