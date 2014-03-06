@@ -241,23 +241,14 @@ public class KdTree {
 		if (distToNode < distToCand) candidate = node;
 		
 		Node primary, secondary;
-		if (node.direction == VERTICAL) {
-			if (node.point.compareTo(p) < 0) {
-				primary = node.right;
-				secondary = node.left;
-			} else {
-				primary = node.left;
-				secondary = node.right;
-			}
+		if (node.point.compareTo(p) < 0) {
+			primary = node.right;
+			secondary = node.left;
 		} else {
-			if (node.point.compareTo(p) < 0) {
-				primary = node.right;
-				secondary = node.left;
-			} else {
-				primary = node.left;
-				secondary = node.right;
-			}
+			primary = node.left;
+			secondary = node.right;
 		}
+
 		nearest(primary, p);
 		nearest(secondary, p);
 	}
